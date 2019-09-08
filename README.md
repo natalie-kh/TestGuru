@@ -1,11 +1,15 @@
 # README
 
-Objects to be implemented in the TestGuru project:
+How to use:
 
 
-* User
+* User visits the site
 
-* System administrator
+* User chooses a test
 
-* Test
+* Test includes a scope of questions
+
+* User answers to the scope of questions
+
+* Test result saved 
 

@@ -7,6 +7,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module TestGuru
+
+  VERSION = '0.0.1'.freeze
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
