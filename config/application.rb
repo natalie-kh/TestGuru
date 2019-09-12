@@ -7,7 +7,6 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module TestGuru
-
   VERSION = '0.0.1'.freeze
 
   class Application < Rails::Application
