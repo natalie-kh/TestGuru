@@ -13,15 +13,11 @@ users = User.create!([{ name: 'ELIZABETH II', login: 'ELIZABETH II', password: '
 categories = Category.create!([{ title: 'public' },
                                { title: 'work' }])
 
-tests = Test.create!([{ title: 'How Smart You Are', level: 3, category_id: categories[0].id },
-                      { title: 'Know horror sequels?', level: 1, category_id: categories[0].id }])
+tests = Test.create!([{ title: 'How Smart You Are', level: 3, category_id: categories[0].id, author_id: users[2].id },
+                      { title: 'Know horror sequels?', level: 1, category_id: categories[0].id, author_id: users[0].id }])
 
-statuses = TestStatus.create!([{ title: 'passed' },
-                               { title: 'in progress' },
-                               { title: 'to do' }])
-
-questions = Question.create!([{ body: 'Which was Boris Karloff\'s second film as Frankenstein\'s monster?' },
-                              { body: 'What was the subtitle of A Nightmare on Elm Street 2?' }])
+questions = Question.create!([{ body: 'Which was Boris Karloff\'s second film as Frankenstein\'s monster?', test_id: tests[1].id },
+                              { body: 'What was the subtitle of A Nightmare on Elm Street 2?', test_id: tests[1].id }])
 
 answers = Answer.create!([{ body: 'Bride of Frankenstein', correct: true, question_id: questions[0].id },
                           { body: 'Frankenstein Meets the Wolf Man', correct: false, question_id: questions[0].id },
@@ -30,7 +26,7 @@ answers = Answer.create!([{ body: 'Bride of Frankenstein', correct: true, questi
                           { body: 'The Dream Master', correct: false, question_id: questions[1].id },
                           { body: 'Freddy\'s Revenge', correct: true, question_id: questions[1].id }])
 
-user_tests = UserTest.create!([{ user_id: users[0].id, test_id: tests[0].id, test_status_id: statuses[0].id },
-                               { user_id: users[0].id, test_id: tests[1].id, test_status_id: statuses[1].id },
-                               { user_id: users[1].id, test_id: tests[1].id, test_status_id: statuses[1].id },
-                               { user_id: users[2].id, test_id: tests[1].id, test_status_id: statuses[1].id }])
+tests_users = TestsUser.create!([{ user_id: users[0].id, test_id: tests[0].id },
+                                { user_id: users[0].id, test_id: tests[1].id },
+                                { user_id: users[1].id, test_id: tests[1].id },
+                                { user_id: users[2].id, test_id: tests[1].id }])
