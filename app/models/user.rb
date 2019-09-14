@@ -1,10 +1,10 @@
 class User < ApplicationRecord
-  has_many :tests_users
-  has_many :tests, through: :tests_users
-  has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'
+  has_many :tests_users, dependent: :destroy
+  has_many :tests, through: :tests_users, dependent: :destroy
+  has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
 
   def test_list(level)
-    Test.joins('INNER JOIN user_tests ON tests.id = user_tests.test_id')
+    Test.joins(:users_tests)
         .where(tests: { level: level }, user_tests: { user_id: id })
   end
 end

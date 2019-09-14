@@ -35,8 +35,16 @@ ActiveRecord::Schema.define(version: 2019_09_13_163520) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-# Could not dump table "tests" because of following StandardError
-#   Unknown type '' for column 'author_id'
+  create_table "tests", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "level", default: 0
+    t.integer "category_id"
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_tests_on_author_id"
+    t.index ["category_id"], name: "index_tests_on_category_id"
+  end
 
   create_table "tests_users", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
