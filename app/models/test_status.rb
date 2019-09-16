@@ -1,2 +1,0 @@
-class TestStatus < ApplicationRecord
-end
