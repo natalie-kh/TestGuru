@@ -4,12 +4,10 @@
   <meta charset="utf-8">
 </head>
 <body>
-<title>Create new question</title>
+<h1>New question</h1>
 <form action="/tests/<%=@test.id%>/questions" method="post">
   <input name ="authenticity_token" value="<%=form_authenticity_token%>" type="hidden">
-  <p>Question body:</p>
-  <p><input type="text" name="question[body]" id="question-body"></p>
-  <input type="hidden" id="test_id" name="question[test_id]" value="<%=@test.id%>" >
+  <input type="text" name="question[body]" id="question-body" placeholder="Question">
   <p><input type="submit" value="Create"></p>
 </form>
 </body>
