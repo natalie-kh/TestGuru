@@ -4,11 +4,14 @@
   <meta charset="utf-8">
 </head>
 <body>
-<h1>New question</h1>
-<form action="/tests/<%=@test.id%>/questions" method="post">
-  <input name ="authenticity_token" value="<%=form_authenticity_token%>" type="hidden">
-  <input type="text" name="question[body]" id="question-body" placeholder="Question">
-  <p><input type="submit" value="Create"></p>
-</form>
+<h1>Create New question</h1>
+<%= form_with model: [@test, @question], local: true do |form| %>
+    <%= render 'shared/errors', resource: @question%>
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_field :body, placeholder: 'Question body' , id: :question_body %>
+    </p>
+    <p><%= form.submit%></p>
+<% end %>
 </body>
 </html>
