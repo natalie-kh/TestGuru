@@ -25,17 +25,14 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    p "in edit"
     @test = @question.test
   end
 
   def show
-    p "in show"
     @answers = @question.answers.all
   end
 
   def update
-    p "in update"
     @question = find_question
 
     if @question.update(question_params)
