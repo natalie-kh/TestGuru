@@ -1,0 +1,15 @@
+<% if @tests.present? %>
+    <h2>Tests List:</h2>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Question count</th>
+        <th>Author</th>
+        <th colspan="3">Actions</th>
+      </tr>
+      <%= render @tests %>
+<% else %>
+    <p>No tests yet</p>
+<% end %>
+</table>

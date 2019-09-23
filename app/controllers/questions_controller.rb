@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_action :find_test, only: %w[index new create]
-  before_action :find_question, only: %w[show]
+  before_action :find_question, only: %w[show edit]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -24,8 +24,26 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+  def edit
+    p "in edit"
+    @test = @question.test
+  end
+
   def show
-    render plain: @question.body
+    p "in show"
+    @answers = @question.answers.all
+  end
+
+  def update
+    p "in update"
+    @question = find_question
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      @test = @question.test
+      render :edit
+    end
   end
 
   def destroy
@@ -51,6 +69,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Object not found'
+    render plain: 'Question not found'
   end
 end
