@@ -1,3 +1,2 @@
 <h1><%= header_creator('edit')%></h1>
-<% @resources=@question%>
-<%= render 'form'%>
+<%= render 'form', question: @question, test: nil%>
