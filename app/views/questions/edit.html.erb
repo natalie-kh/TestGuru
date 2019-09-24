@@ -1,2 +1,5 @@
 <h1><%= header_creator('edit')%></h1>
 <%= render 'form', question: @question, test: nil%>
+<p>
+  <%= link_to '< Back', test_questions_path(@question.test) %>
+</p>

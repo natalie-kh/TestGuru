@@ -9,7 +9,7 @@ module QuestionsHelper
   end
 
   def github_url(author, repo)
-    "http://#{author}/#{repo}"
+    "https://github.com/#{author}/#{repo}"
   end
 
 end
