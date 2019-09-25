@@ -1,33 +1,40 @@
 class QuestionsController < ApplicationController
-
-  before_action :find_test, only: %w[index new create]
-  before_action :find_question, only: %w[show destroy]
+  before_action :find_test, only: %w[new create]
+  before_action :find_question, only: %w[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    render json: { questions: @test.questions.all }
-  end
-
   def create
-    question = @test.questions.build(question_params)
+    @question = @test.questions.build(question_params)
 
-    if question.save
-      render plain: 'Question created successfully'
+    if @question.save
+      redirect_to @question
     else
       render :new
     end
   end
 
-  def new; end
+  def new
+    @question = @test.questions.build
+  end
+
+  def edit; end
 
   def show
-    render plain: @question.body
+    @answers = @question.answers.all
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
     @question.destroy
-    render plain: 'Question deleted successfully'
+    redirect_to test_path(@question.test)
   end
 
   private
@@ -45,6 +52,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Object not found'
+    render plain: 'Question not found'
   end
 end
