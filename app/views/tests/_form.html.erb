@@ -6,11 +6,11 @@
     </p>
     <p>
       <%= form.label :category_id %><br>
-      <%= form.collection_select :category_id, Category.all , :id, :title, promt: true %>
+      <%= form.collection_select :category_id, Category.all , :id, :title, prompt: true %>
     </p>
     <p>
       <%= form.label :author_id %><br>
-      <%= form.collection_select :author_id, User.all , :id, :name, promt: true %>
+      <%= form.collection_select :author_id, User.all , :id, :name, prompt: true %>
     </p>
     <p><%= form.submit%></p>
 <% end %>

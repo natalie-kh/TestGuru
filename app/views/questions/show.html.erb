@@ -1,9 +1,9 @@
 <p>
+  <%= link_to '< Back', test_path(@question.test) %>
+</p>
+<p>
   <strong> Body: </strong>
   <%=@question.body%><br>
   <strong> Answers count: </strong>
   <%=@question.answers.count%>
-<p>
-  <%= link_to '< Back', test_questions_path(@question.test) %>
-</p>
 </p>
