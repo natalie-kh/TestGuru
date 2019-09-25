@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-
   before_action :find_test, only: %w[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -12,11 +11,10 @@ class TestsController < ApplicationController
     @questions = @test.questions.all
   end
 
-  def edit
-  end
+  def edit; end
 
   def new
-   @test = Test.new
+    @test = Test.new
   end
 
   def create
@@ -30,7 +28,6 @@ class TestsController < ApplicationController
   end
 
   def update
-
     if @test.update(test_params)
       redirect_to @test
     else

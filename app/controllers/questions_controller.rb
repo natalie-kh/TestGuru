@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-
   before_action :find_test, only: %w[new create]
   before_action :find_question, only: %w[show edit update destroy]
 
@@ -19,15 +18,13 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build
   end
 
-  def edit
-  end
+  def edit; end
 
   def show
     @answers = @question.answers.all
   end
 
   def update
-
     if @question.update(question_params)
       redirect_to @question
     else

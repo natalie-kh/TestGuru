@@ -9,7 +9,7 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equl_to: 0 }
   validates :title, uniqueness: { scope: :level,
-                                message: 'Already exists' }
+                                  message: 'Already exists' }
 
   scope :level, ->(level) { where(level: level) }
   scope :easy, -> { level(0..1) }
