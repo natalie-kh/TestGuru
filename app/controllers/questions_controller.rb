@@ -21,7 +21,6 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def show
-    @answers = @question.answers.all
   end
 
   def update

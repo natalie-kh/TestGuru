@@ -8,7 +8,6 @@ class TestsController < ApplicationController
   end
 
   def show
-    @questions = @test.questions.all
   end
 
   def edit; end

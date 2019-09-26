@@ -1,11 +1,14 @@
+<h1>Tests</h1>
+<p>
+  <%= link_to 'New Test', new_test_path%>
+</p>
+
 <% if @tests.present? %>
-    <h2>Test List:</h2>
     <table>
       <tr>
         <th>Title</th>
-        <th>Category</th>
-        <th>Question count</th>
-        <th>Author</th>
+        <th>Level</th>
+        <th>Questions</th>
         <th colspan="3">Actions</th>
       </tr>
       <%= render @tests %>
@@ -13,6 +16,3 @@
     <p>No tests yet</p>
 <% end %>
 </table>
-<p>
-  <%= link_to 'Create New Test', new_test_path%>
-</p>
