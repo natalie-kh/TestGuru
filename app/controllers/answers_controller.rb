@@ -1,16 +1,14 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :set_question, only: [:new, :create]
+  before_action :set_answer, only: %w[show edit update destroy]
+  before_action :set_question, only: %w[new create]
 
-  def show
-  end
+  def show; end
 
   def new
     @answer = @question.answers.build
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @answer = @question.answers.build(answer_params)
