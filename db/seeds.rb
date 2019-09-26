@@ -26,7 +26,7 @@ answers = Answer.create!([{ body: 'Bride of Frankenstein', correct: true, questi
                           { body: 'The Dream Master', correct: false, question: questions[1] },
                           { body: 'Freddy\'s Revenge', correct: true, question: questions[1] }])
 
-tests_users = TestsUser.create!([{ user: users[0], test: tests[0] },
-                                 { user: users[0], test: tests[1] },
-                                 { user: users[1], test: tests[1] },
-                                 { user: users[2], test: tests[1] }])
+# test_passages = TestPassage.create!([{ user: users[0], test: tests[0] },
+#                                  { user: users[0], test: tests[1] },
+#                                  { user: users[1], test: tests[1] },
+#                                  { user: users[2], test: tests[1] }])

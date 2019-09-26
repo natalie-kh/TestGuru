@@ -2,6 +2,8 @@ class AnswersController < ApplicationController
   before_action :set_answer, only: %w[show edit update destroy]
   before_action :set_question, only: %w[new create]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
+
   def show; end
 
   def new
@@ -45,5 +47,9 @@ class AnswersController < ApplicationController
 
   def answer_params
     params.require(:answer).permit(:body, :correct)
+  end
+
+  def rescue_with_answer_not_found
+    render plain: 'Answer not found'
   end
 end
