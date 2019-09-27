@@ -6,9 +6,7 @@ class TestPassage < ApplicationRecord
   before_save :before_save_set_question
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1  if correct_answer?(answer_ids)
 
     save!
   end
@@ -22,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result_percent
-    (correct_questions / questions_count) * 100
+    (correct_questions.to_f / questions_count) * 100
   end
 
   def questions_count
@@ -30,12 +28,13 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.order(:id).index(current_question) + 1
+    test.questions.order(:id).index(current_question).next
   end
 
   private
 
   def correct_answer?(answer_ids)
+    answer_ids ||= []
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
@@ -48,7 +47,7 @@ class TestPassage < ApplicationRecord
   end
 
   def before_save_set_question
-    self.current_question = if completed?
+    self.current_question = if new_record?
                               test.questions.first
                             else
                               next_question
