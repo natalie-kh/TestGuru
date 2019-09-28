@@ -20,9 +20,7 @@ class QuestionsController < ApplicationController
 
   def edit; end
 
-  def show
-    @answers = @question.answers.all
-  end
+  def show; end
 
   def update
     if @question.update(question_params)

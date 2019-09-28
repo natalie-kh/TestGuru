@@ -1,5 +1,9 @@
+<h1>New Question</h1>
+
 <p>
-  <%= link_to '< Back', test_path(@question.test) %>
+  <%= @question.test.title%>
 </p>
-<h1><%= header_creator%></h1>
-<%= render 'form'%>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', test_path(@question.test) %>
