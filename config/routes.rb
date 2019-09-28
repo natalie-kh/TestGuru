@@ -22,8 +22,6 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
-
-
   # GET /test_passages/38/result
   resources :test_passages, only: %w[show update] do
     member do
