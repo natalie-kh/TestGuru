@@ -2,11 +2,11 @@
 <% if  @test_passage.passed? %>
       <h2>The Test passed</h2>
       <p>Your result:
-        <span style="color: green"><%= @test_passage.result_percent %>%</span></p>
+        <span class="passed"><%= @test_passage.result_percent %>%</span></p>
 <% else %>
     <h2>The Test failed</h2>
     <p>Your result:
-      <span style="color: red"><%= @test_passage.result_percent %>%</span></p>
+      <span class="failed"><%= @test_passage.result_percent %>%</span></p>
 <% end %>
 
 <%= link_to 'Back', tests_path %>
