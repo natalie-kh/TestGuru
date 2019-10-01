@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :set_test, only: %w[show edit update destroy start]
+  before_action :set_test, only: %w[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -13,12 +13,11 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def new
-    @test = Test.new
+    @test = current_user.created_tests.build
   end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = current_user
+    @test = current_user.created_tests.build(test_params)
 
     if @test.save
       redirect_to admin_test_path(@test)
@@ -38,11 +37,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private
