@@ -1,7 +1,4 @@
 <h1>Tests</h1>
-<p>
-  <%= link_to 'New Test', new_test_path%>
-</p>
 
 <% if @tests.present? %>
     <table>
@@ -9,7 +6,7 @@
         <th>Title</th>
         <th>Level</th>
         <th>Questions</th>
-        <th colspan="4">Actions</th>
+        <th>Actions</th>
       </tr>
       <%= render @tests %>
 <% else %>
