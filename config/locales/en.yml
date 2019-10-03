@@ -30,9 +30,19 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  links:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    next: "Next"
+    delete_confirmation: "Are you sure?"
+    new_test: "New Test"
+    new_question: "New question"
 
   helpers:
+    select:
+      promt: "Please select"
     submit:
       test:
         create: "Create Test"
@@ -45,14 +55,43 @@ en:
 
   admin:
     tests:
+      form:
+        placeholder:
+          title: "Test Title"
+          level: "Test Level"
       create:
         success: "Test has been successfully created"
+      update:
+        success: "Test has been successfully updated"
       index:
         header: "Tests"
+        title: "Title"
+        level: "Level"
+        question_list: "Questions"
+        actions: "Actions"
+        empty_test_list: "No tests yet"
+      edit:
+        header: "Edit Test"
+      new:
+        header: "New Test"
+      show:
+        header: "Tests"
+        title: "Title"
+        level: "Level"
+        question_list: "Questions"
+        actions: "Actions"
+        empty_question_list: "No questions yet"
+
 
   test_passages:
+    show:
+      header: "Passing the %{title} Test"
+      progress_bar: "Progress"
     result:
       header: "The test '%{title}' was completed!"
+      passed_header: "The Test passed"
+      failed_header: "The Test failed"
+      result_message: "Your result: "
 
   shared:
     errors:
@@ -63,3 +102,13 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  tests:
+    test:
+      start: "Start"
+    index:
+      header: "Tests"
+      title: "Title"
+      level: "Level"
+      question_list: "Questions"
+      empty_test_list: "No tests yet"
