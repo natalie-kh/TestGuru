@@ -37,6 +37,14 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      new:
+        header: "Sign up"
+        email: "Email"
+        new_password: "Password"
+        password_confirmation: "Confirm Password"
+        min_password_length: "%{min} characters minimum"
+        first_name: "First Name"
+        last_name: "Last Name"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -46,6 +54,11 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
+      new:
+        header: "Log In"
+        email: "Email"
+        current_password: "Current Password"
+        remember_me: "Remember Me"
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
@@ -63,3 +76,4 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
