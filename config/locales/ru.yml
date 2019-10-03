@@ -1,0 +1,120 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+ru:
+  dialogs:
+    default:
+      ok: "Да"
+      cancel: "Нет"
+  links:
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    back: "Назад"
+    next: "Следующий вопрос"
+    delete_confirmation: "Вы уверены?"
+    new_test: "Новый Тест"
+    new_question: "Новый вопрос"
+
+  helpers:
+    select:
+      promt: "Выберите"
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  admin:
+    tests:
+      form:
+        placeholder:
+          title: "Название Теста"
+          level: "Уровень Теста"
+      create:
+        success: "Тест успешно создан"
+      update:
+        success: "Тест успешно обновлен"
+      index:
+        header: "Tесты"
+        title: "Название"
+        level: "Уровень"
+        question_list: "Вопросы"
+        actions: "Действия"
+        empty_test_list: "Еще не создан ни один тест"
+      edit:
+        header: "Редактирование Теста"
+      new:
+        header: "Новый тест"
+      show:
+        header: "Тесты"
+        title: "Название"
+        level: "Уровень"
+        question_list: "Вопросы"
+        actions: "Действия"
+        empty_question_list: "Еще не создан ни один вопрос"
+
+
+  test_passages:
+    show:
+      header: "Прохождение %{title} Теста"
+      progress_bar: "Прохождение"
+    result:
+      header: "Прохождение теста '%{title}' завершено!"
+      passed_header: "Tест успешно пройден!"
+      failed_header: "Тест не пройден :("
+      result_message: "Ваш результат: "
+
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы только что завершили прохождение теста!"
+
+  tests:
+    test:
+      start: "Начать"
+    index:
+      header: "Тесты"
+      title: "Название"
+      level: "Уровень"
+      question_list: "Вопросы"
+      empty_test_list: "Пока не создан ни один тест"
