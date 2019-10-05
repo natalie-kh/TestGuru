@@ -39,6 +39,10 @@ en:
     delete_confirmation: "Are you sure?"
     new_test: "New Test"
     new_question: "New question"
+    log_in: 'Sign In'
+    sign_up: 'Sign Up'
+    log_out: 'Logout'
+    admin_panel: "Admin Panel | "
 
   helpers:
     select:

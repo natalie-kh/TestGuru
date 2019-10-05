@@ -43,6 +43,10 @@ ru:
     delete_confirmation: "Вы уверены?"
     new_test: "Новый Тест"
     new_question: "Новый вопрос"
+    log_in: 'Войти'
+    sign_up: 'Зарегистироваться'
+    log_out: 'Выйти'
+    admin_panel: "Админская Панель | "
 
   helpers:
     select:
