@@ -7,10 +7,6 @@ module ApplicationHelper
     "https://github.com/#{author}/#{repo}"
   end
 
-  def flash_message(type)
-    content_tag :p, flash[type], class: "flash #{type}" if flash[type]
-  end
-
   def alert_class(key)
     case key
       when 'success'
