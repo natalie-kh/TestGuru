@@ -86,10 +86,13 @@ ru:
       update_needs_confirmation: "Ваш аккаунт успешно обновлен, нонеобходимо подтвердить ваш новый адрес email. Пожалуйста, проверьте свою электронную почту и нажмите на ссылку \"Подтвердить\", чтобы завершить обновления email."
     sessions:
       new:
-        header: "Войти"
+        header: "Введите данные Гуру"
         email: "Email"
+        email_placeholder: 'Введите Email'
         current_password: "Пароль"
+        password_placeholder: 'Введите Пароль'
         remember_me: "Запомнить меня"
+        login_button: "Войти"
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."
     unlocks:

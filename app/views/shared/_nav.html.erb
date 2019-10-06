@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+        Welcome, <b><%= current_user.first_name || current_user.email %></b> Guru |
+        <%= link_to t('links.admin_panel'), admin_tests_path if current_user.admin? %>
+        <%= link_to t('links.log_out'), destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to t('links.log_in'), new_user_session_path, method: :get %> |
+        <%= link_to t('links.sign_up'), new_user_registration_path, method: :get %>
+    <% end %>
+  </span>
+</nav>

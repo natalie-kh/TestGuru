@@ -7,9 +7,7 @@ module ApplicationHelper
     "https://github.com/#{author}/#{repo}"
   end
 
-  def flash_message(type)
-    content_tag :p, flash[type], class: "flash #{type}" if flash[type]
+  def alert_class(key)
+    { success: 'alert-success', alert: 'alert-danger', notice: 'alert-info' }[key.to_sym]
   end
-
 end
-

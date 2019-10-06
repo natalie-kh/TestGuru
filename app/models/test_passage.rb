@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   before_save :before_save_set_question
 
   def accept!(answer_ids)
-    self.correct_questions += 1  if correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
   end
@@ -16,7 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def passed?
-    result_percent  >= 85
+    result_percent >= 85
   end
 
   def result_percent
