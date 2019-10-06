@@ -26,8 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # UI
+gem 'bootstrap', '~> 4.3.0'
 gem 'jquery-rails'
-gem 'bootstrap' , '~> 4.3.0'
 
 # AUTH
 gem 'devise', '~> 4.0'
