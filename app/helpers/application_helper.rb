@@ -8,15 +8,6 @@ module ApplicationHelper
   end
 
   def alert_class(key)
-    case key
-      when 'success'
-        'alert-success'
-      when 'alert'
-        'alert-danger'
-      when 'notice'
-        'alert-info'
-    end
+    { success: 'alert-success', alert: 'alert-danger', notice: 'alert-info' }[key.to_sym]
   end
-
 end
-

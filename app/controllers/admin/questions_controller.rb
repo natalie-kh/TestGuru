@@ -1,5 +1,4 @@
 class Admin::QuestionsController < Admin::BaseController
-
   before_action :find_test, only: %w[new create]
   before_action :find_question, only: %w[show edit update destroy]
 
