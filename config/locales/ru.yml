@@ -100,6 +100,9 @@ ru:
       passed_header: "Tест успешно пройден!"
       failed_header: "Тест не пройден :("
       result_message: "Ваш результат: "
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время охранения Gist произошла ошибка"
 
   shared:
     errors:

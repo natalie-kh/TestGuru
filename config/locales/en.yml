@@ -96,6 +96,9 @@ en:
       passed_header: "The Test passed"
       failed_header: "The Test failed"
       result_message: "Your result: "
+    gist:
+      success: "Gist has been saved!"
+      failure: "An error occurred while saving the Gist"
 
   shared:
     errors:
