@@ -1,13 +1,21 @@
 class GistQuestionService
 
+  attr_reader :responce
+
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client || OctokitClient.new
   end
 
   def call
-    @client.create_gist(gist_params)
+    @responce = @client.create_gist(gist_params)
+    byebug
+  end
+
+
+  def success?
+    @client.http_client.last_response.status == 201
   end
 
   private
@@ -28,4 +36,5 @@ class GistQuestionService
     content += @question.answers.pluck(:body)
     content.join("\n")
   end
+
 end
