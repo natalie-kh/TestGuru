@@ -2,10 +2,10 @@ class GistQuestionService
 
   attr_reader :responce
 
-  def initialize(question, client: nil)
+  def initialize(question, client: default_client)
     @question = question
     @test = @question.test
-    @client = client || OctokitClient.new
+    @client = client
   end
 
   def call
@@ -13,7 +13,11 @@ class GistQuestionService
   end
 
   def success?
-   (200..299).include?(@client.http_client.last_response.status)
+    @responce[:html_url] && (200..299).include?(@client.last_response.status)
+  end
+
+  def default_client
+    Octokit::Client.new(access_token: ENV['OCTOKID_TOKEN'])
   end
 
   private
