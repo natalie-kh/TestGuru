@@ -2,7 +2,7 @@ class GistQuestionService
 
   attr_reader :responce
 
-  def initialize(question, client: default_client)
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
     @client = client
