@@ -10,19 +10,17 @@ class GistQuestionService
 
   def call
     @responce = @client.create_gist(gist_params)
-    byebug
   end
 
-
   def success?
-    @client.http_client.last_response.status == 201
+   (200..299).include?(@client.http_client.last_response.status)
   end
 
   private
 
   def gist_params
     {
-        description: "A question about #{@test.title} from TestGuru",
+        description: I18n.t('services.gist_question_service.description', title: @test.title),
         files: {
             'test_guru_question.txt' => {
                 content: gist_content

@@ -22,9 +22,9 @@ class TestPassagesController < ApplicationController
     service.call
 
     if service.success?
-      @gist = Gist.new(url: service.responce[:html_url], question: @test_passage.current_question, author: @test_passage.user)
+      @gist = Gist.create!(url: service.responce[:html_url], question: @test_passage.current_question, author: @test_passage.user)
 
-      redirect_to @test_passage, notice: t('.success')
+      redirect_to @test_passage, notice: t('.success_html', url: @gist.url)
     else
       redirect_to @test_passage, notice: t('.failure')
     end

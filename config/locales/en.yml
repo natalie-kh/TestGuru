@@ -43,6 +43,8 @@ en:
     sign_up: 'Sign Up'
     log_out: 'Logout'
     admin_panel: "Admin Panel | "
+    created_gists: "Created Gists"
+    click_here: "Click here"
 
   helpers:
     select:
@@ -58,6 +60,20 @@ en:
         category_id: "Category"
 
   admin:
+    gists:
+      gist:
+        github_url: 'GitHub'
+      index:
+        question: "Question"
+        author: "Author"
+        github_url: "Gist on GitHub"
+        actions: "Actions"
+        empty_gist_list: "No gists yet"
+      show:
+        header: "Created Gists"
+        question: "Question"
+        author: "Author"
+        github_url: "Gist on GitHub"
     tests:
       form:
         placeholder:
@@ -97,7 +113,7 @@ en:
       failed_header: "The Test failed"
       result_message: "Your result: "
     gist:
-      success: "Gist has been saved!"
+      success_html: <a href="%{url}">Gist</a> has been saved!
       failure: "An error occurred while saving the Gist"
 
   shared:
@@ -119,3 +135,7 @@ en:
       level: "Level"
       question_list: "Questions"
       empty_test_list: "No tests yet"
+
+  services:
+    gist_question_service:
+      description: "A question about %{title} from TestGuru"

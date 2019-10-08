@@ -2,8 +2,7 @@ class OctokitClient
 
   attr_reader :http_client
 
-  ACCESS_TOKEN = 'e4de0c21479ff7dc1130150638ab502a9044ce3f'
-
+  ACCESS_TOKEN  = ENV['OCTOKID_TOKEN']
 
   def initialize
     @http_client = setup_http_client

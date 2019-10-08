@@ -1,0 +1,18 @@
+<h1><%= t('.header')%></h1>
+
+<% if @gists.present? %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col"><%= t('.question') %></th>
+        <th scope="col"><%= t('.author') %></th>
+        <th scope="col"><%= t('.github_url') %></th>
+        <th scope="col" colspan="1"><%= t('.actions') %></th>
+      </tr>
+      </thead>
+
+      <%= render @gists %>
+<% else %>
+    <p><%= t('.empty_gist_list') %></p>
+<% end %>
+</table>

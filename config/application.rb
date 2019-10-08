@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
 
 module TestGuru
   VERSION = '0.0.1'.freeze
@@ -16,6 +17,7 @@ module TestGuru
     config.i18n.default_locale = :en
 
     config.autoload_paths << "#{Rails.root}/lib/clients"
+    config.autoload_paths << "#{Rails.root}/services"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
