@@ -5,6 +5,6 @@ class Gist < ApplicationRecord
   validates :url, presence: true
 
   def github_hash
-    url.scan(/.*github.com\/(.*)$/).join
+    url.split('/').last
   end
 end
