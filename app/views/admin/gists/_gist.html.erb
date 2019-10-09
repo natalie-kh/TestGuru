@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to truncate(gist.question.body, length: 25, escape: false), admin_gist_path(gist) %></td>
+  <td><%= gist.author.email %></td>
+  <td><%= link_to gist.github_hash, gist.url %></td>
+  <td><%= link_to t('links.show'), admin_gist_path(gist) %></td>
+</tr>

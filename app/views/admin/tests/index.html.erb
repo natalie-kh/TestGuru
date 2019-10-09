@@ -3,6 +3,10 @@
   <%= link_to t('links.new_test'), new_admin_test_path%>
 </p>
 
+<p>
+  <%= link_to t('links.created_gists'), admin_gists_path%>
+</p>
+
 <% if @tests.present? %>
     <table class="table">
       <thead>

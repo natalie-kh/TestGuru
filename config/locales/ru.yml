@@ -47,6 +47,8 @@ ru:
     sign_up: 'Зарегистироваться'
     log_out: 'Выйти'
     admin_panel: "Админская Панель | "
+    created_gists: "Созданные Gists"
+    click_here: "Нажмите"
 
   helpers:
     select:
@@ -62,6 +64,20 @@ ru:
         category_id: "Категория"
 
   admin:
+    gists:
+      gist:
+        github_url: 'GitHub'
+      index:
+        question: "Вопрос"
+        author: "Автор"
+        github_url: "Gist на GitHub"
+        actions: "Действия"
+        empty_gist_list: "Пока не создано ни одного Gist"
+      show:
+        header: "Созданные Gists"
+        question: "Вопрос"
+        author: "Автор"
+        github_url: "Gist на GitHub"
     tests:
       form:
         placeholder:
@@ -100,6 +116,9 @@ ru:
       passed_header: "Tест успешно пройден!"
       failed_header: "Тест не пройден :("
       result_message: "Ваш результат: "
+    gist:
+      success_html: <a href="%{url}">Gist</a> успешно сохранен!!
+      failure: "Во время охранения Gist произошла ошибка"
 
   shared:
     errors:
@@ -122,3 +141,7 @@ ru:
       level: "Уровень"
       question_list: "Вопросы"
       empty_test_list: "Пока не создан ни один тест"
+
+  services:
+    gist_question_service:
+      description: "Вопрос по %{title} TestGuru тесту"

@@ -1,0 +1,19 @@
+
+<p>
+  <strong><%= t('.question') %>:</strong>
+  <%= @gist.question.body %>
+</p>
+
+<p>
+  <strong><%= t('.author') %>:</strong>
+  <%= @gist.author.email%>
+</p>
+
+<p>
+  <strong><%= t('.github_url') %>:</strong>
+  <%= link_to t('links.click_here'), @gist.url%>
+</p>
+
+<p>
+  <%= link_to t('links.back'), admin_gists_path %>
+</p>
