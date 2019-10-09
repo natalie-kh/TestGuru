@@ -26,10 +26,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# UI
-gem 'bootstrap', '~> 4.3.0'
-gem 'jquery-rails'
-
 # AUTH
 gem 'devise', '~> 4.0'
 
@@ -42,6 +38,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # NETWORKING
 gem 'faraday'
 gem 'octokit', '~> 4.0'
+
+# UI
+gem 'bootstrap', '~> 4.3.0'
+gem 'jquery-rails'
+gem 'octicons_helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
