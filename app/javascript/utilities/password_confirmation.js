@@ -1,14 +1,14 @@
 document.addEventListener('turbolinks:load', function() {
-    var input = document.querySelector('.check_confirmation')
+    const input = document.querySelector('.check_confirmation')
 
     if (input) { input.addEventListener('input', checkDifference ) }
 })
 
 function checkDifference () {
-    var passwordConf = document.getElementById('user_password_confirmation')
-    var password = document.getElementById('user_password')
-    var passwordValue = password.value
-    var passwordConfValue = passwordConf.value
+    const passwordConf = document.getElementById('user_password_confirmation')
+    const password = document.getElementById('user_password')
+    const passwordValue = password.value
+    const passwordConfValue = passwordConf.value
 
     if (passwordConfValue == '') {
         this.querySelector('.octicon-check').classList.add('hide')
