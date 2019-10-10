@@ -11,6 +11,7 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 require("utilities/sorting.js")
+require("utilities/password_confirmation.js")
 //= require_tree .
 
 
