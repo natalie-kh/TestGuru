@@ -10,10 +10,10 @@ function checkDifference () {
     const passwordValue = password.value
     const passwordConfValue = passwordConf.value
 
-    if (passwordConfValue == '') {
+    if (passwordConfValue === '') {
         this.querySelector('.octicon-check').classList.add('hide')
         this.querySelector('.octicon-x').classList.add('hide')
-    }  else if (passwordValue == passwordConfValue) {
+    }  else if (passwordValue === passwordConfValue) {
         this.querySelector('.octicon-check').classList.remove('hide')
         this.querySelector('.octicon-x').classList.add('hide')
     } else {
