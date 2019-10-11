@@ -7,6 +7,8 @@
   <%= link_to t('links.created_gists'), admin_gists_path%>
 </p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <% if @tests.present? %>
     <table class="table">
       <tr>
