@@ -14,6 +14,7 @@ require("utilities/sorting.js")
 require("utilities/password_confirmation.js")
 require("utilities/sorting.js")
 require("utilities/form_inline")
+require("utilities/progress.js")
 //= require_tree .
 
 

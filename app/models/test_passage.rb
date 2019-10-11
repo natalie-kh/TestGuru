@@ -31,6 +31,10 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).index(current_question).next
   end
 
+  def current_passage_percent
+    100 * current_question_number.to_f / questions_count
+  end
+
   private
 
   def correct_answer?(answer_ids)
