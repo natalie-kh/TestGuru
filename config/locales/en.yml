@@ -79,6 +79,8 @@ en:
         placeholder:
           title: "Test Title"
           level: "Test Level"
+      form_inline:
+        submit: 'OK'
       create:
         success: "Test has been successfully created"
       update:
@@ -106,7 +108,7 @@ en:
   test_passages:
     show:
       header: "Passing the %{title} Test"
-      progress_bar: "Progress"
+      progress_bar: "%{percent}% completed"
     result:
       header: "The test '%{title}' was completed!"
       passed_header: "The Test passed"

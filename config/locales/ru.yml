@@ -83,6 +83,8 @@ ru:
         placeholder:
           title: "Название Теста"
           level: "Уровень Теста"
+      form_inline:
+        submit: 'OK'
       create:
         success: "Тест успешно создан"
       update:
@@ -110,7 +112,7 @@ ru:
   test_passages:
     show:
       header: "Прохождение %{title} Теста"
-      progress_bar: "Прохождение"
+      progress_bar: "Пройдено %{percent}% пути"
     result:
       header: "Прохождение теста '%{title}' завершено!"
       passed_header: "Tест успешно пройден!"
