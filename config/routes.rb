@@ -1,6 +1,6 @@
-Rails.application.routes.draw do
+Rails.application.routes.default_url_options[:host] = 'shielded-everglades-48459.herokuapp.com'
 
-  default_url_options = { host: 'shielded-everglades-48459.herokuapp.com' }
+Rails.application.routes.draw do
 
   root 'tests#index'
 
