@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  default_url_options = { host: 'shielded-everglades-48459.herokuapp.com' }
+
   root 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
