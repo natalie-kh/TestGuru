@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: test_guru_ production
+  database: test_guru_production
