@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
 
+  resources :feedbacks, only: %w[new create]
+
   resources :tests, only: :index do
     post :start, on: :member
   end

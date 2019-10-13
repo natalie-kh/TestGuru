@@ -104,6 +104,13 @@ en:
         actions: "Actions"
         empty_question_list: "No questions yet"
 
+  feedbacks:
+    form:
+      email: "Email"
+      message: "Message"
+      submit: "Send Message"
+    new:
+      header: "Contact Us"
 
   test_passages:
     show:
