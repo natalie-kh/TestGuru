@@ -1,12 +1,68 @@
-<footer class="footer">
-  <div id="left"><p>  <%= link_to 'TestGuru', github_url('natalya-bogdanova', 'TestGuru'), target: :_blank%>
-    By <%= link_to 'Natalya Bogdanova', '/about/author', target: :_blank %><br>
-    Web-based online testing service</p></div>
-  <div id="right"><p>Implemented as a part of the educational program.<br>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-3">
 
-    For more information: <%= link_to 'Thinknetika Online School', 'https://thinknetica.com', target: :_blank%></p></div>
-  <div id="bot"><p>@<%=current_year%></p><br></div>
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-5 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase"><%= link_to 'TestGuru', github_url('natalya-bogdanova', 'TestGuru'), target: :_blank%></h5>
+        <p>Web-based online testing service<br>
+          Implemented as a part of the educational program
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mb-md-0 mb-3 ">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'About Author', '/about/author', target: :_blank %>
+          </li>
+          <li>
+            <%= link_to 'Thinknetika Online School', 'https://thinknetica.com', target: :_blank%>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Contact US</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Feedback', new_feedback_path, target: :_blank %>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© <%= current_year %></div>
+  <!-- Copyright -->
+
 </footer>
-
+<!-- Footer -->
 
 
