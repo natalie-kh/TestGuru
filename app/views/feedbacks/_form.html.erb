@@ -1,0 +1,19 @@
+<%= form_with model: @feedback, local: true do |form| %>
+    <div class="card border-primary">
+      <div class="card-body">
+        <div class="form-group">
+          <p>
+            <%= form.label :email %>
+            <%= form.text_field :email, placeholder: t('.email') , class: 'form-control', id: :feedback_email %>
+          </p>
+
+          <p>
+            <%= form.label :message %>
+            <%= form.text_field :message, placeholder: t('.message'), class: 'form-control', id: :feedback_message %>
+          </p>
+
+          <p><%= form.submit t('.submit'), class: 'btn btn-primary' %></p>
+        </div>
+      </div>
+    </div>
+<% end %>

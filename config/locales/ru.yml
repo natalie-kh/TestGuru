@@ -108,6 +108,13 @@ ru:
         actions: "Действия"
         empty_question_list: "Еще не создан ни один вопрос"
 
+  feedbacks:
+    form:
+      email: "Email"
+      message: "Сообщение"
+      submit: "Отправить"
+    new:
+      header: "Напишите Нам"
 
   test_passages:
     show:
