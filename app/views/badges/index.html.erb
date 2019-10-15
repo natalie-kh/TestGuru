@@ -1,0 +1,14 @@
+<h1>Existing Badges</h1>
+
+<% if @badges.present? %>
+<table class="table">
+     <tr>
+     <th scope="col">Name</th>
+      <th scope="col">Description</th>
+    </tr>
+     <%= render @badges %>
+<% else %>
+  <p>No Badges yet</p>
+<% end %>
+</table>
+<%= link_to "My Badges", my_badges_path %>

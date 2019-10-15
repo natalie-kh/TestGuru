@@ -3,6 +3,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :nullify
   has_many :gists, class_name: 'Gist', foreign_key: 'author_id', dependent: :nullify
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges, dependent: :destroy
+
 
   devise :database_authenticatable,
          :registerable,
@@ -14,6 +17,12 @@ class User < ApplicationRecord
 
   def test_list(level)
     tests.where(tests: { level: level })
+  end
+
+  def tests_by_category(category_name)
+    tests.joins(:category)
+        .where(categories: { title: category_name })
+        .order(title: :desc)
   end
 
   def test_passage(test)
