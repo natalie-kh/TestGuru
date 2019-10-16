@@ -142,6 +142,7 @@ en:
       header: "Tests"
       title: "Title"
       level: "Level"
+      category: "Category"
       question_list: "Questions"
       empty_test_list: "No tests yet"
 

@@ -93,6 +93,7 @@ ru:
         header: "Tесты"
         title: "Название"
         level: "Уровень"
+        category: "Категория"
         question_list: "Вопросы"
         actions: "Действия"
         empty_test_list: "Еще не создан ни один тест"

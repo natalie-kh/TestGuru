@@ -10,6 +10,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      @test_passage.update_passed
       TestsMailer.completed_test(@test_passage).deliver_now
       give_badges
       redirect_to result_test_passage_path(@test_passage), notice: "You have new badges" if reached_badges
@@ -31,14 +32,20 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  private
+  # private
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
 
-  def reached_badges
-    Badge.all.select { |badge| badge.reached?(current_user)}
+  def reached_badges(user = current_user)
+    badges = Badge.where(rule: "by_category", rule_value: @test_passage.test.category.title )
+                 .or(Badge.where(rule: "by_level", rule_value: @test_passage.test.level))
+                 .or(Badge.where(rule: "by_attempt", rule_value: @test_passage.test.title))
+    byebug
+   # Badge.where('rule=by_category AND rule_value=?', @test_passage.test.category.title)
+
+    badges.select { |badge| badge.reached?(user, @test_passage.test)}
   end
 
   def give_badges
