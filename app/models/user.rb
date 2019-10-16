@@ -25,6 +25,10 @@ class User < ApplicationRecord
         .order(title: :desc)
   end
 
+  def tests_after_date(date)
+    joins(test_passages).where(test_passages.updated_at > date)
+  end
+
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test: test)
   end
