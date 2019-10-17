@@ -19,20 +19,20 @@ class Badge < ApplicationRecord
 
   private
 
-  def last_same_badge_date
-    last_badge = user_badges.last
+  def last_same_badge_date(user)
+    last_badge = user_badges.where(user: user).order(created_at: :desc).last
     date = last_badge ? last_badge.updated_at : "2000-10-15 13:25:19"
   end
 
   def reached_by_level?(user)
-    user_passed_tests = user.test_passages.by_date(last_same_badge_date).pluck(:test_id)
+    user_passed_tests = user.test_passages.by_date(last_same_badge_date(user)).pluck(:test_id)
     needed_tests_for_badge = Test.level(rule_value).pluck(:id)
 
     (needed_tests_for_badge - user_passed_tests).empty?
   end
 
   def reached_by_category?(user)
-    user_passed_tests = user.test_passages.by_date(last_same_badge_date).pluck(:test_id)
+    user_passed_tests = user.test_passages.by_date(last_same_badge_date(user)).pluck(:test_id)
     needed_tests_for_badge = Test.by_category(rule_value).pluck(:id)
     (needed_tests_for_badge - user_passed_tests).empty?
   end

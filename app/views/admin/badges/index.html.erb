@@ -1,19 +1,19 @@
-<h1>Badges</h1>
+<h1><%= t('.header')%></h1>
 <p>
-  <%= link_to 'New Badge', new_admin_badge_path %>
+  <%= link_to t('links.new_badge'), new_admin_badge_path %>
 </p>
 
 <% if @badges.present? %>
 <table class="table">
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Rule</th>
-      <th scope="col">Rule value</th>
-      <th colspan="3">Actions</th>
+      <th scope="col"><%= t('.name')%></th>
+      <th scope="col"><%= t('.description')%></th>
+      <th scope="col"><%= t('.rule')%></th>
+      <th scope="col"><%= t('.rule_value')%></th>
+      <th colspan="3"><%= t('.action')%></th>
     </tr>
     <%= render @badges %>
 <% else %>
-  <p>No Badges yet</p>
+  <p><%= t('.empty_badge_list')%></p>
 <% end %>
 </table>

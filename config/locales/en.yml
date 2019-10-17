@@ -37,6 +37,7 @@ en:
     back: "Back"
     next: "Next"
     delete_confirmation: "Are you sure?"
+    new_badge: 'New Badge'
     new_test: "New Test"
     new_question: "New question"
     log_in: 'Sign In'
@@ -53,6 +54,9 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+      badges:
+        create: "Create Badge"
+        update: "Update Badge"
     label:
       test:
         title: "Title"
@@ -60,6 +64,41 @@ en:
         category_id: "Category"
 
   admin:
+    badges:
+      create:
+        success: 'Badge was successfully created.'
+      update:
+        success: 'Badge was successfully updated.'
+      destroy:
+        success: 'Badge was successfully updated.'
+      form:
+        name: "Name"
+        description: "Description"
+        rule: "Rule"
+        rule_value: "Rule Value"
+        placeholder:
+          rule_value: "Rule Value"
+          by_category: "Category title"
+          by_label: "Level"
+          by_attempt: "Test Title"
+      edit:
+        header: "Editing Badge"
+      index:
+        header: "Badges"
+        empty_badge_list: "No Badges yet"
+        name: "Name"
+        description: "Description"
+        rule: "Rule"
+        rule_value: "Rule Value"
+        action: 'Actions'
+      new:
+        header: "New Badge"
+      show:
+        name: "Name"
+        description: "Description"
+        rule: "Rule"
+        rule_value: "Rule Value"
+
     gists:
       gist:
         github_url: 'GitHub'
@@ -104,6 +143,22 @@ en:
         actions: "Actions"
         empty_question_list: "No questions yet"
 
+  my_badges:
+    index:
+      header: "My Badges"
+      empty_badge_list: "You have No Badges yet"
+      all_badges: "All Badges"
+      name: "Name"
+      description: "Description"
+
+  badges:
+    index:
+      header: "Existing Badges"
+      empty_badge_list: "No Badges yet"
+      my_badges: "My Badges"
+      name: "Name"
+      description: "Description"
+
   feedbacks:
     form:
       email: "Email"
@@ -121,6 +176,8 @@ en:
       passed_header: "The Test passed"
       failed_header: "The Test failed"
       result_message: "Your result: "
+    update:
+      new_badges_html: Wow! You have new badges. <a href="%{url}">See</a>
     gist:
       success_html: <a href="%{url}">Gist</a> has been saved!
       failure: "An error occurred while saving the Gist"

@@ -1,6 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
     var selector = document.getElementById('badge_rule')
-    console.log(selector)
 
     if (selector) { selector.addEventListener('change', changeField ) }
 })
@@ -10,7 +9,7 @@ function changeField () {
     var selector = document.getElementById('badge_rule')
 
     if (selector.value === 'by_attempt') {
-        field.placeholder= 'Attempt Count'
+        field.placeholder= 'Test Title'
 
     } else if (selector.value === 'by_level') {
         field.placeholder= 'Test Level'

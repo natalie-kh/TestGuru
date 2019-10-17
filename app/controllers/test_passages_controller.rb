@@ -13,7 +13,7 @@ class TestPassagesController < ApplicationController
       @test_passage.update_passed
       TestsMailer.completed_test(@test_passage).deliver_now
       give_badges
-      redirect_to result_test_passage_path(@test_passage), notice: "You have new badges" if reached_badges
+      redirect_to result_test_passage_path(@test_passage), notice: t('.new_badges_html', url: my_badges_url) if reached_badges
     else
       render :show
     end
@@ -32,7 +32,7 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  # private
+  private
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
@@ -42,8 +42,6 @@ class TestPassagesController < ApplicationController
     badges = Badge.where(rule: "by_category", rule_value: @test_passage.test.category.title )
                  .or(Badge.where(rule: "by_level", rule_value: @test_passage.test.level))
                  .or(Badge.where(rule: "by_attempt", rule_value: @test_passage.test.title))
-    byebug
-   # Badge.where('rule=by_category AND rule_value=?', @test_passage.test.category.title)
 
     badges.select { |badge| badge.reached?(user, @test_passage.test)}
   end

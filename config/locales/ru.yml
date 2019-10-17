@@ -41,6 +41,7 @@ ru:
     back: "Назад"
     next: "Следующий вопрос"
     delete_confirmation: "Вы уверены?"
+    new_badge: 'Новый Бейдж'
     new_test: "Новый Тест"
     new_question: "Новый вопрос"
     log_in: 'Войти'
@@ -57,6 +58,9 @@ ru:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
+      badge:
+        create: "Создать Бейдж"
+        update: "Обновить Бейдж"
     label:
       test:
         title: "Название"
@@ -64,6 +68,40 @@ ru:
         category_id: "Категория"
 
   admin:
+    badges:
+      create:
+        success: 'Новый бейдж создан'
+      update:
+        success: 'Бейдж успешно обновлен'
+      destroy:
+        success: 'Бейдж успешно удален'
+      form:
+        name: "Название"
+        description: "Описание"
+        rule: "Правило"
+        rule_value: "Значение Правила"
+        placeholder:
+          rule_value: "Значение Правила"
+          by_category: "Название Категории"
+          by_label: "Уровень"
+          by_attempt: "Название Теста"
+      edit:
+        header: "Редактирование Бейджа"
+      index:
+        header: "Существующие Бейджи"
+        empty_badge_list: "Пока не создано ни одного бейджа"
+        name: "Название"
+        description: "Описание"
+        rule: "Правило"
+        rule_value: "Значение Правила"
+        action: "Действия"
+      new:
+        header: "Новый Бейдж"
+      show:
+        name: "Название"
+        description: "Описание"
+        rule: "Правило"
+        rule_value: "Значение Правила"
     gists:
       gist:
         github_url: 'GitHub'
@@ -109,6 +147,22 @@ ru:
         actions: "Действия"
         empty_question_list: "Еще не создан ни один вопрос"
 
+  my_badges:
+    index:
+      header: "Мои Бейджи"
+      empty_badge_list: "У Вас пока нет ни одного Бейджа"
+      all_badges: "Существующие Бейджи"
+      name: "Название"
+      description: "Описание"
+
+  badges:
+    index:
+      header: "Существующие Бейджи"
+      empty_badge_list: "Пока не создано ни одного Бейджа"
+      my_badges: "Мои Бейджи"
+      name: "Название"
+      description: "Описание"
+
   feedbacks:
     form:
       email: "Email"
@@ -126,6 +180,8 @@ ru:
       passed_header: "Tест успешно пройден!"
       failed_header: "Тест не пройден :("
       result_message: "Ваш результат: "
+    update:
+      new_badges_html: Кажется, Вы получили новый бейдж. <a href="%{url}">Посмотрим?</a>
     gist:
       success_html: <a href="%{url}">Gist</a> успешно сохранен!!
       failure: "Во время охранения Gist произошла ошибка"

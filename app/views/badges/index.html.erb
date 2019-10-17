@@ -1,14 +1,14 @@
-<h1>Existing Badges</h1>
+<h1><%= t('.header')%></h1>
 
 <% if @badges.present? %>
 <table class="table">
      <tr>
-     <th scope="col">Name</th>
-      <th scope="col">Description</th>
+     <th scope="col"></th>
+      <th scope="col"><%= t('.description')%></th>
     </tr>
      <%= render @badges %>
 <% else %>
-  <p>No Badges yet</p>
+  <p><%= t('.empty_badge_list')%></p>
 <% end %>
 </table>
-<%= link_to "My Badges", my_badges_path %>
+<%= link_to t('.my_badges'), my_badges_path %>
