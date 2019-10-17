@@ -13,7 +13,8 @@ class TestPassagesController < ApplicationController
       @test_passage.update_passed
       TestsMailer.completed_test(@test_passage).deliver_now
       give_badges
-      redirect_to result_test_passage_path(@test_passage), notice: t('.new_badges_html', url: my_badges_url) if reached_badges
+      redirect_to result_test_passage_path(@test_passage)
+      flash[:notice] = t('.new_badges_html', url: my_badges_url) if reached_badges.any?
     else
       render :show
     end
