@@ -20,11 +20,6 @@ class Test < ApplicationRecord
       .where(categories: { title: category_name })
       .order(title: :desc)
   }
-  scope :by_date_complete, lambda { |date|
-    joins(:test_passages)
-        .where(test_passages: where(:updated_at > date))
-        .order(title: :desc)
-  }
 
   def self.test_list(category_name)
     by_category(category_name).pluck(:title)

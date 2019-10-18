@@ -1,5 +1,4 @@
 class FeedbacksController < ApplicationController
-
   def new
     @feedback = Feedback.new
   end
@@ -21,5 +20,3 @@ class FeedbacksController < ApplicationController
     params.require(:feedback).permit(:message, :email)
   end
 end
-
-

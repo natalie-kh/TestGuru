@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :user_badges, dependent: :destroy
   has_many :badges, through: :user_badges, dependent: :destroy
 
-
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -17,16 +16,6 @@ class User < ApplicationRecord
 
   def test_list(level)
     tests.where(tests: { level: level })
-  end
-
-  def tests_by_category(category_name)
-    tests.joins(:category)
-        .where(categories: { title: category_name })
-        .order(title: :desc)
-  end
-
-  def tests_after_date(date)
-    joins(test_passages).where(test_passages.updated_at > date)
   end
 
   def test_passage(test)

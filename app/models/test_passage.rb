@@ -4,8 +4,9 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_question
-  
-  scope :by_date, ->(date) {where("updated_at > ? AND passed=true", date)}
+
+  scope :by_date, ->(date) { success.where('updated_at > ?', date) }
+  scope :success, -> { where(passed: true) }
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)

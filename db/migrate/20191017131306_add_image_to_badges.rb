@@ -4,6 +4,6 @@ class AddImageToBadges < ActiveRecord::Migration[6.0]
 
     Badge.all.each do |badge|
       badge.update_attributes(image: badge.rule + '.png')
-      end
+    end
   end
 end

@@ -1,5 +1,4 @@
 class GistQuestionService
-
   attr_reader :responce
 
   def initialize(question, client = default_client)
@@ -24,12 +23,12 @@ class GistQuestionService
 
   def gist_params
     {
-        description: I18n.t('services.gist_question_service.description', title: @test.title),
-        files: {
-            'test_guru_question.txt' => {
-                content: gist_content
-            }
+      description: I18n.t('services.gist_question_service.description', title: @test.title),
+      files: {
+        'test_guru_question.txt' => {
+          content: gist_content
         }
+      }
     }
   end
 
@@ -38,5 +37,4 @@ class GistQuestionService
     content += @question.answers.pluck(:body)
     content.join("\n")
   end
-
 end
