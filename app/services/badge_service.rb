@@ -9,7 +9,7 @@ class BadgeService
   end
 
   def reached?(badge)
-    send('reached_' + badge.rule + '?', badge)
+    send("reached_#{badge.rule}?", badge)
   end
 
   def reached_badges
