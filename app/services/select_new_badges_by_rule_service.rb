@@ -1,4 +1,4 @@
-class SelectBadgesByRuleService
+class SelectNewBadgesByRuleService
 
   def initialize(test_passage)
     @test_passage = test_passage

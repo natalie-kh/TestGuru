@@ -40,7 +40,7 @@ class TestPassagesController < ApplicationController
   end
 
   def give_badges
-    new_badges = GetNewUserBadgesService.new(@test_passage).call
+    new_badges = SelectNewBadgesByRuleService.new(@test_passage).call
     current_user.badges << new_badges
     new_badges
   end
