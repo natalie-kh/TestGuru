@@ -6,7 +6,7 @@ class BadgeByAttemptRuleService < BadgesByRuleService
   end
 
   def reached?
-    return false if last_same_badge_date(@badge)
+    return false if last_same_badge_date(@badge) ||  @badge.rule_value != @test.title
 
     test_passages = @user.test_passages.joins(:test).where('tests.title=?', @badge.rule_value)
     test_passages.count == 1 && test_passages.first.passed

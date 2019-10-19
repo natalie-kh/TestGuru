@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_question
 
-  scope :by_date, ->(date) { success.where('updated_at > ?', date) }
+  scope :by_date, ->(date) { where('updated_at > ?', date) }
   scope :success, -> { where(passed: true) }
 
   def accept!(answer_ids)

@@ -11,12 +11,11 @@ class BadgesByRuleService
   end
 
   def last_same_badge_date(badge)
-    last_badge = badge.user_badges.where(user: @user).order(created_at: :desc).last
-    last_badge ? last_badge.updated_at : nil
+    badge.user_badges.where(user: @user).order(created_at: :desc).last&.updated_at
   end
 
   def passed_user_test(badge)
     date = last_same_badge_date(badge)
-    date ? @user.test_passages.by_date(date) : @user.test_passages.success
+    date ? @user.test_passages.by_date(date) : @user.test_passages
   end
 end
