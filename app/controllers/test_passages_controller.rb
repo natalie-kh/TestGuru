@@ -10,8 +10,11 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      @test_passage.update_passed
       TestsMailer.completed_test(@test_passage).deliver_now
+      badges = give_badges
       redirect_to result_test_passage_path(@test_passage)
+      flash[:notice] = t('.new_badges_html', url: my_badges_url) if badges.any?
     else
       render :show
     end
@@ -34,5 +37,11 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def give_badges
+    new_badges = SelectNewBadgesByRuleService.new(@test_passage).call
+    current_user.badges << new_badges
+    new_badges
   end
 end

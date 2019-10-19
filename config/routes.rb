@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
@@ -22,7 +21,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index
+  resources :my_badges, only: :index
+
   namespace :admin do
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
 

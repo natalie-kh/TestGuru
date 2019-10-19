@@ -5,6 +5,9 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_question
 
+  scope :by_date, ->(date) { where('updated_at > ?', date) }
+  scope :success, -> { where(passed: true) }
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
@@ -17,6 +20,12 @@ class TestPassage < ApplicationRecord
 
   def passed?
     result_percent >= 85
+  end
+
+  def update_passed
+    self.passed = passed?
+
+    save!
   end
 
   def result_percent
@@ -53,7 +62,7 @@ class TestPassage < ApplicationRecord
     self.current_question = if new_record?
                               test.questions.first
                             else
-                              next_question
+                              next_question unless completed?
                             end
   end
 end

@@ -8,9 +8,9 @@ class Feedback
 
   def headers
     {
-        :subject => "Contact Form Inquiry",
-        :to => "natalee.bogdanova@gmail.com",
-        :from => %("#{current_user.email}">)
+      subject: 'Contact Form Inquiry',
+      to: 'natalee.bogdanova@gmail.com',
+      from: %("#{current_user.email}">)
     }
   end
 end

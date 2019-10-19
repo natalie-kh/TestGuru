@@ -1,9 +1,19 @@
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: 7px;
   width: 100%;
   background: rgba(0, 0, 0, 0.17);
   margin: 0px;
   height: auto;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  min-height: 70%;
+  margin-bottom: 30px;
 }

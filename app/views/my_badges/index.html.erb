@@ -1,0 +1,14 @@
+<h1><%= t('.header')%></h1>
+
+<% if @my_badges.present? %>
+<table class="table">
+     <tr>
+       <th></th>
+      <th scope="col"><%= t('.description')%></th>
+    </tr>
+     <%= render @my_badges %>
+<% else %>
+  <p><%= t('.empty_badge_list')%></p>
+<% end %>
+</table>
+<%= link_to t('.all_badges'), badges_path %>
