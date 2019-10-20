@@ -10,8 +10,6 @@ class TestPassagesController < ApplicationController
 
     @test_passage.accept!(params[:answer_ids])
 
-    @test_passage.complete_by_timer! if @test_passage.expired?
-
     if @test_passage.completed?
       @test_passage.update_passed
       TestsMailer.completed_test(@test_passage).deliver_now

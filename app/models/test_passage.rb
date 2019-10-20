@@ -53,10 +53,6 @@ class TestPassage < ApplicationRecord
     100 * current_question_number.to_f / questions_count
   end
 
-  def complete_by_timer!
-    self.current_question = nil
-  end
-
   private
 
   def expiration_date
@@ -78,6 +74,8 @@ class TestPassage < ApplicationRecord
   def before_save_set_question
     self.current_question = if new_record?
                               test.questions.first
+                            elsif expired?
+                              nil
                             else
                               next_question unless completed?
                             end
