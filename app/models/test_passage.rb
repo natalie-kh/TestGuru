@@ -22,6 +22,15 @@ class TestPassage < ApplicationRecord
     result_percent >= 85
   end
 
+  def expired?
+    return false if test.timer.nil?
+    expiration_date < Time.current
+  end
+
+  def timeleft
+    (expiration_date - Time.current).to_i
+  end
+
   def update_passed
     self.passed = passed?
 
@@ -44,7 +53,15 @@ class TestPassage < ApplicationRecord
     100 * current_question_number.to_f / questions_count
   end
 
+  def complete_by_timer!
+    self.current_question = nil
+  end
+
   private
+
+  def expiration_date
+    created_at + test.timer.minutes
+  end
 
   def correct_answer?(answer_ids)
     correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort

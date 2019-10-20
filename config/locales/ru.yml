@@ -66,6 +66,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer: 'Таймер (в минутах)'
 
   admin:
     badges:
@@ -121,6 +122,7 @@ ru:
         placeholder:
           title: "Название Теста"
           level: "Уровень Теста"
+          timer: 'Количество минут'
       form_inline:
         submit: 'OK'
       create:
@@ -182,6 +184,7 @@ ru:
       result_message: "Ваш результат: "
     update:
       new_badges_html: Кажется, Вы получили новый бейдж. <a href="%{url}">Посмотрим?</a>
+      time_is_over: 'Время вышло :('
     gist:
       success_html: <a href="%{url}">Gist</a> успешно сохранен!!
       failure: "Во время охранения Gist произошла ошибка"

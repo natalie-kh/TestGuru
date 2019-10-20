@@ -62,6 +62,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer: 'Timer (in minutes)'
 
   admin:
     badges:
@@ -118,6 +119,7 @@ en:
         placeholder:
           title: "Test Title"
           level: "Test Level"
+          timer: 'Minutes'
       form_inline:
         submit: 'OK'
       create:
@@ -178,6 +180,7 @@ en:
       result_message: "Your result: "
     update:
       new_badges_html: Wow! You have new badges. <a href="%{url}">See</a>
+      time_is_over: 'Time is over :('
     gist:
       success_html: <a href="%{url}">Gist</a> has been saved!
       failure: "An error occurred while saving the Gist"
