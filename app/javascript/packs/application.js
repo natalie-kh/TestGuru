@@ -16,6 +16,7 @@ require("utilities/password_confirmation.js")
 require("utilities/form_inline")
 require("utilities/progress.js")
 require("utilities/badge_rule_value")
+require("utilities/timer")
 //= require_tree .
 
 

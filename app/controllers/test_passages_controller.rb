@@ -7,6 +7,7 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
+
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
@@ -15,6 +16,7 @@ class TestPassagesController < ApplicationController
       badges = give_badges
       redirect_to result_test_passage_path(@test_passage)
       flash[:notice] = t('.new_badges_html', url: my_badges_url) if badges.any?
+      flash[:alert] = t('.time_is_over') if @test_passage.expired?
     else
       render :show
     end
